@@ -27,7 +27,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source /home/p/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # ───────────────────────────────────────────────────────────────────
 #  PATH
@@ -140,20 +140,20 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # PNPM
-export PNPM_HOME="/home/p/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 [[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
 
 # Ruby
 command -v rbenv &>/dev/null && eval "$(rbenv init -)"
 
 # Bun
-[ -s "/home/p/.bun/_bun" ] && source "/home/p/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Turso
 [ -f "$HOME/.turso" ] && source "$HOME/.turso"
 
 # GHCup (Haskell)
-[ -f "/home/p/.ghcup/env" ] && source "/home/p/.ghcup/env"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # SDKMAN (must be near end)
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -169,7 +169,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 #  Startup Banner (causes prompt jump - remove if unwanted)
 # ───────────────────────────────────────────────────────────────────
 [[ -t 1 ]] && command -v neofetch &>/dev/null && neofetch
-[ -f "/home/p/.ghcup/env" ] && . "/home/p/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 
 
 alias dce='docker exec -it $(docker ps --filter "label=devcontainer.local_folder=$(pwd)" -q) bash'
