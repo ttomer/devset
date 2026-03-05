@@ -1,16 +1,21 @@
-# dotfiles
+# devset
 
-Personal Linux dotfiles managed with symlinks.
+My personal macOS dev environment — shell, terminal, editor, and tools — managed with symlinks.
 
-## Setup
+## Fresh Mac Setup
 
 ```sh
-git clone git@github.com:paarthd00/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-./bootstrap.sh
+git clone https://github.com/ttomer/devset ~/dotfiles
+cd ~/dotfiles && ./bootstrap.sh
 ```
 
-`bootstrap.sh` links all dotfiles, prompts for a theme (default: `night-owl`), applies theme files for Alacritty/tmux/Neovim, and updates the Claude theme and sets COLORFGBG for TUI apps.
+That's it. `bootstrap.sh` will:
+1. Install Homebrew (if missing)
+2. Install all packages from `Brewfile` (alacritty, fira code, neovim, tmux, fzf, ripgrep, rust, node, etc.)
+3. Install oh-my-zsh + plugins (autosuggestions, fast-syntax-highlighting, autocomplete, powerlevel10k)
+4. Install nvm and bun
+5. Symlink all dotfiles into place
+6. Let you pick a theme (default: `night-owl`)
 
 ## Options
 
@@ -29,7 +34,7 @@ cd ~/dotfiles
 - `tokyo-night`
 - `quiet-light`
 
-Theme assets live under `themes/<theme>/` — `alacritty.toml`, `tmux.conf`, `nvim-theme.lua`.
+Theme assets live under `themes/<name>/` — `alacritty.toml`, `tmux.conf`, `nvim-theme.lua`.
 
 ## What gets linked
 
@@ -41,9 +46,6 @@ Theme assets live under `themes/<theme>/` — `alacritty.toml`, `tmux.conf`, `nv
 | `~/.p10k.zsh` | `.p10k.zsh` |
 | `~/.config/alacritty/` | `.config/alacritty/` |
 | `~/.config/nvim/` | `.config/nvim/` |
-| `~/.config/wofi/` | `.config/wofi/` |
-| `~/.config/sway/` | `sway/` |
-| `~/.config/waybar/` | `waybar/` |
 | `~/.tmux.conf` | `.tmux.conf` |
 | `~/.codex/config.toml` | `codex/config.toml` |
 | `~/.claude.json` | `claude/config.json` |

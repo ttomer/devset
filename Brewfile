@@ -1,29 +1,28 @@
-# Dotfile dependencies for macOS
+# macOS dev environment dependencies
 # Install everything with: brew bundle
 
-# ── Fonts ────────────────────────────────────────────────────────────────────
-tap "homebrew/cask-fonts"
-cask "font-fira-code"
-
 # ── Terminal & Shell ──────────────────────────────────────────────────────────
-cask "alacritty"
+brew "alacritty"
 brew "findutils"          # provides gfind (used by bootstrap.sh)
 brew "tmux"
 brew "fzf"                # fuzzy finder (used heavily in .zshrc)
-brew "zsh-autosuggestions"
+
+# ── Fonts ─────────────────────────────────────────────────────────────────────
+cask "font-fira-code"
 
 # ── CLI Tools ─────────────────────────────────────────────────────────────────
 brew "ripgrep"            # rg - fast grep
 brew "fd"                 # fast find (fdfind in .zshrc)
 brew "bat"                # better cat (used in fzf previews)
-brew "eza"                # better ls (replaces exa, which is unmaintained)
+brew "eza"                # better ls (successor to exa)
 brew "tree"               # directory tree
 brew "neofetch"           # system info (startup banner)
 brew "gh"                 # GitHub CLI
 brew "git"
 
-# ── Editors ───────────────────────────────────────────────────────────────────
+# ── Editors & AI ──────────────────────────────────────────────────────────────
 brew "neovim"
+brew "claude-code"
 
 # ── Languages & Runtimes ──────────────────────────────────────────────────────
 brew "rust"
