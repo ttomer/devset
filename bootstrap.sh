@@ -100,11 +100,12 @@ is_light_theme() {
 }
 
 update_claude_theme() {
-  config_file="$DOTFILES_DIR/claude/config.json"
+  config_file="$HOME_DIR/.claude.json"
   desired_theme="$1"
 
   if [ ! -f "$config_file" ]; then
-    log "skip (missing source): $config_file"
+    printf '{\n  "theme": "%s"\n}\n' "$desired_theme" >"$config_file"
+    log "created: $config_file (.theme = $desired_theme)"
     return 0
   fi
 
@@ -264,7 +265,6 @@ if [ "$THEME_ONLY" -eq 0 ]; then
   # CLI config links
   mkdir -p "$HOME_DIR/.codex"
   link_path "$DOTFILES_DIR/codex/config.toml" "$HOME_DIR/.codex/config.toml"
-  link_path "$DOTFILES_DIR/claude/config.json" "$HOME_DIR/.claude.json"
 fi
 
 # Theme links

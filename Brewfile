@@ -2,7 +2,7 @@
 # Install everything with: brew bundle
 
 # ── Terminal & Shell ──────────────────────────────────────────────────────────
-brew "alacritty"
+cask "alacritty"
 brew "findutils"          # provides gfind (used by bootstrap.sh)
 brew "tmux"
 brew "fzf"                # fuzzy finder (used heavily in .zshrc)
@@ -16,13 +16,13 @@ brew "fd"                 # fast find (fdfind in .zshrc)
 brew "bat"                # better cat (used in fzf previews)
 brew "eza"                # better ls (successor to exa)
 brew "tree"               # directory tree
-brew "neofetch"           # system info (startup banner)
+brew "fastfetch"          # system info (startup banner)
 brew "gh"                 # GitHub CLI
 brew "git"
 
 # ── Editors & AI ──────────────────────────────────────────────────────────────
 brew "neovim"
-brew "claude-code"
+cask "claude-code"
 
 # ── Languages & Runtimes ──────────────────────────────────────────────────────
 brew "rust"

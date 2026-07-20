@@ -9,3 +9,7 @@ dist-newstyle
 sway/colors.conf
 waybar/style.css
 .config/wofi/style.css
+.config/nvim/lua/paarth/theme.lua
+
+claude/config.json
+.claude.json

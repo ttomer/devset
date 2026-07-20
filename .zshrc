@@ -171,7 +171,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # ───────────────────────────────────────────────────────────────────
 #  Startup Banner (causes prompt jump - remove if unwanted)
 # ───────────────────────────────────────────────────────────────────
-[[ -t 1 ]] && command -v neofetch &>/dev/null && neofetch
+[[ -t 1 ]] && command -v fastfetch &>/dev/null && fastfetch
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 
 
