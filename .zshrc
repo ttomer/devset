@@ -7,9 +7,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Locale
-export LC_ALL=en_CA.utf8
-export LANG=en_CA.utf8
+# Locale (macOS uses the UTF-8 form, not the Linux-style .utf8 alias —
+# the lowercase alias leaves Ruby/CocoaPods on ASCII-8BIT and breaks `pod install`)
+export LC_ALL=en_CA.UTF-8
+export LANG=en_CA.UTF-8
 
 # ───────────────────────────────────────────────────────────────────
 #  Oh My Zsh
